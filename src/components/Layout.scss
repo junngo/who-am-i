@@ -1,21 +1,28 @@
-$primary-color: #ffa07a; // Soft blue
-$secondary-color: #f0ead6; // Muted coral
-$background-color: #fffacd; // Light grey for the background
-$text-color: #5c4033; // Dark grey for text
-$accent-color: #ffd700; // Pastel yellow for accents
+$primary-color: #ffa07a;
+$secondary-color: #f0ead6;
+$background-color: #ffffff;
+$text-color: #333;
+$accent-color: #34a853;
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $background-color; /* Ensuring the overall background is white */
+}
 
 .app-container {
   display: flex;
   min-height: 100vh;
-  background-color: $background-color;
+  color: $text-color;
 }
 
 .left-nav {
-  width: 250px; // Adjust width of the navigation bar
-  background-color: $primary-color; // Background color
-  color: #fff; // Text color
-  padding: 20px; // Padding inside the navigation bar
+  width: 250px;
+  background-color: $background-color;
+  color: $text-color;
+  font-weight: 700;
+  padding: 20px;
   padding-top: 50px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
   transition: width 0.3s ease;
   overflow: hidden;
 
@@ -39,35 +46,26 @@ $accent-color: #ffd700; // Pastel yellow for accents
 
     li {
       padding: 10px 15px; // Add padding for each list item
-      border-bottom: 1px solid #ccc; // Add a border to separate items
 
       a {
         display: block;
-        padding: 10px 15px; // Adjust padding as needed
-        border-radius: 5px; // Rounded corners for the links
-        color: #fff; // Set the text color
+        color: $text-color;
         text-decoration: none; // Remove underline from links
-        transition:
-          background-color 0.3s,
-          box-shadow 0.3s;
+        margin: 10px 0;
+        padding: 8px 0;
+        transition: color 0.3s, padding-left 0.3s;
 
         &:hover {
-          background-color: #e89072;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Subtle shadow
+          color: $accent-color; /* Green text on hover for a cohesive theme */
+          padding-left: 8px; /* Slight movement to indicate interaction */
         }
-      }
-
-      &:last-child {
-        border-bottom: none; // Remove border for the last item
       }
     }
   }
 }
 
 .main-content {
-  flex-grow: 1; // Allows the main content to take up the remaining space
-  background-color: #fff; // Background color for the content area
-  color: $text-color;
+  flex-grow: 1;
   padding: 20px; // Padding inside the content area
   padding-top: 50px;
 }
